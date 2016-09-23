@@ -1,0 +1,16 @@
+<a ng-href="#/">Home</a> | <a ng-href="#/questions/{{question._id}}/new_answer">Answer This Question</a>
+<hr>
+<h2>{{question.title}}</h2>
+<h4>{{question.description}}</h4>
+<hr>
+<br>
+<br>
+
+<div ng-repeat = "answer in question._answers | orderBy: '-likes'">
+	<p>{{answer._author.name}} answered:</p>
+	<p>{{answer.text}}</p>
+	<p>{{answer.details}}</p>
+	<p>{{answer.likes}} Likes</p>
+	<button ng-click="like(answer._id)">Like this Answer</button>
+	<hr>
+</div>

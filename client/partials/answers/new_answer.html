@@ -1,0 +1,12 @@
+<a ng-href="#/">Home</a> | <a ng-href="#/questions/{{question._id}}">Go Back to Question</a>
+<hr>
+<h2>{{question.title}}</h2>
+<p>{{question.description}}</p>
+<form ng-submit="create()">
+	<label>Your Answer: <input type="text" name="text" ng-model="text"></label>
+	<label>Supporting Details (Optional): <input type="text" name="details" ng-model="details"></label>
+	<a ng-href="#/questions/{{question._id}}"><button>Cancel</button></a>
+	<input type="submit" name="submit" value="Add Answer">
+</form>
+<hr>
+{{error}}

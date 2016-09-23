@@ -1,0 +1,16 @@
+<h2>Hello {{logged_user.name}}<span ng-hide="{{logged_user}}">Anonymous</span>!!</h2>
+Search: <input type="text" name="searchText" ng-model="searchQuestion">
+<hr>
+<a ng-href="#/new_question">Add New Question</a>
+<table>
+	<tr>
+		<th>Question</th>
+		<th>Answers</th>
+		<th>Actions</th>
+	</tr>
+	<tr ng-repeat="question in questions | filter:searchQuestion">
+		<td>{{question.title}}</td>
+		<td>{{question._answers.length}}</td>
+		<td><a ng-href="#/questions/{{question._id}}">Show</a> | <a ng-href="#/questions/{{question._id}}/new_answer">Answer</a></td>
+	</tr>
+</table>

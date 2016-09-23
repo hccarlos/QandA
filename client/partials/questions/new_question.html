@@ -1,0 +1,11 @@
+<a ng-href="#/">Home</a>
+<hr>
+<h3>New Question</h3>
+<form ng-submit="create()">
+	<label>Question: <input type="text" name="title" ng-model="title"></label>
+	<label>Description: <input type="text" name="description" ng-model="description"></label>
+	<a ng-href="#/"><button>Cancel</button></a>
+	<input type="submit" name="submit" value="Add Question">
+</form>
+<hr>
+{{error}}
